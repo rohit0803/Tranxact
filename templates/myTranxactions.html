@@ -1,0 +1,60 @@
+<div class="page-container" style="background-color: #f2f2f2">
+
+	<div class="page-content-wrap">
+                          
+        <div class="row">
+            <div class="col-md-12">
+                            
+                <!-- START TIMELINE -->
+                <div class="timeline timeline-right">
+                                
+                    <!-- START TIMELINE ITEM -->
+                    <div class="timeline-item timeline-main">
+                        <div class="timeline-date" >2014</div>
+                    </div>
+                                <!-- END TIMELINE ITEM -->
+                            <!-- <div ng-repeat="tranxaction in tranxactions"> -->
+                                <!-- START TIMELINE ITEM -->
+                                <div class="timeline-item timeline-item-right">
+                                    <div class="timeline-item-info">{{(tranxaction.document.startDate || tranxaction.document.dateOfJoining) | date: 'shortDate'}}</div>
+                                    <div class="timeline-item-icon"><span class="fa fa-edit"></span></div>
+                                    <div class="timeline-item-content" style="border-right: 5px solid #1caf9a">
+                                        <div class="timeline-heading">
+                                            <a href=""><i  style="float:right" class="glyphicon glyphicon-trash" ng-click="deleteProject(tranxaction._id);"></i></a>
+                                            <img src="/img/mranish.png"/>You created a project <a href=""><span ng-click="reviewContract(tranxaction.document);">{{tranxaction.name}}</span></a> assigned to <a href="">
+                                                    <span ng-if="tranxaction.document.contractType=='Providing a Service'">{{tranxaction.document.acceptorName || tranxaction.document.acceptorCompanyName}}<br />{{contract.acceptorEmail}}</span>
+                                                    <span ng-if="tranxaction.document.contractType=='Hiring For service'">{{tranxaction.document.providerName || tranxaction.document.providerCompanyName}}<br />{{tranxaction.document.providerEmail}}</span>
+                                                    <span ng-if="tranxaction.documentType != 'GeneralServiceAgreement'">{{tranxaction.document.otherPartyName}}</span>                                                         
+                                            </a>
+                                        </div>
+                                        <div class="timeline-body">
+                                           
+                                           <p>STATUS : {{tranxaction.document.status}}</p>
+                                            <p>END DATE : 
+                                            <span ng-if="tranxaction.document.endDate">{{tranxaction.document.endDate | date : 'shortDate'}}</span>
+                                            <button class="btn btn-default" data-toggle="modal" data-target="#setDateModal" type="button" ng-disabled="tranxaction.documentType != 'GeneralServiceAgreement' || !tranxaction.document" ng-if="!tranxaction.document.endDate" ng-click="setModalData(tranxaction);">
+                                                <span class="glyphicon glyphicon-calendar">
+                                                </span>
+                                            </button></p>
+                                            
+                                            <p>TYPE : <span ng-if="tranxaction.document.contractType">{{tranxaction.document.contractType}}</span><span ng-if="!tranxaction.document.contractType">{{tranxaction.documentType}}</span></p>
+                                            <img src="/img/7.png" style="float:left" class="img-text" width="150" height="50" />
+                                            
+                                            <a href="" style="float:right"><i class="glyphicon glyphicon-info-sign" ng-click="details(tranxaction._id);"></i>&nbsp&nbsp View Details</a></br></br>
+                                            <span style="float:right"><i class="fa fa-bell"></i><a href="" >&nbsp&nbspSend Reminder</a>
+                                                                                     
+                                        </div>
+                                                                               
+                                        
+                                    </div>
+                                </div> 
+                               
+                                
+                            
+                </div>
+            </div>
+                    
+        </div>
+    </div>
+  
+</div>
